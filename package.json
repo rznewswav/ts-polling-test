@@ -5,7 +5,8 @@
   "type": "module",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "got": "^12.4.1"
   },
   "devDependencies": {
     "@types/jest": "27.5.0",
@@ -55,8 +56,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts",
-    "deno": "deno run --compat --unstable --allow-read --allow-write --allow-env"
+    "start": "ts-node --files src/index.ts",
+    "dev": "ts-node --files",
+    "deno": "deno run --compat --unstable --allow-read --allow-write --allow-env --allow-net"
   },
   "description": "",
   "keywords": [],
