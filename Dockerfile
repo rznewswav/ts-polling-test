@@ -8,13 +8,9 @@ RUN apk update && apk add bash
 
 RUN npm ci
 
-COPY . .
-
-RUN npx prisma generate
-
-RUN npm run cbuild
+COPY src src
 
 ARG _POLL_URL=https://google.com
 ENV POLL_URL=${_POLL_URL}
 
-CMD ["/bin/sh", "-c", "node", "src/polling-test.js", $POLL_URL]
+ENTRYPOINT ["node", "src/polling-test.js"]

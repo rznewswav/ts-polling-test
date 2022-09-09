@@ -30,13 +30,13 @@ while (true) {
     const nextPolling = ~~(50000 + Math.random() * 20000);
     try {
         const data = await got.get(new URL(url));
-        const isOk = data.statusCode >= 200 && data.statusCode < 300;
+        const isOk = data?.statusCode >= 200 && data?.statusCode < 300;
         if (isOk) {
             log({
                 msg: `Polling OK!`,
                 metadata: {
                     url,
-                    statusCode: data.statusCode,
+                    statusCode: data?.statusCode,
                     nextPolling,
                 },
             });
@@ -46,7 +46,7 @@ while (true) {
                 msg: `Polling Error!`,
                 metadata: {
                     url,
-                    statusCode: data.statusCode,
+                    statusCode: data?.statusCode,
                     nextPolling,
                 },
             });
@@ -57,7 +57,7 @@ while (true) {
             msg: `Server Error!`,
             metadata: {
                 url,
-                statusCode: data.statusCode,
+                statusCode: data?.statusCode,
                 nextPolling,
             },
         });
