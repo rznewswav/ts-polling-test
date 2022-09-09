@@ -1,0 +1,7 @@
+services:
+  polling-test:
+    build:
+      context: .
+      args:
+        - _POLL_URL=https://raflie.cc/
+    
