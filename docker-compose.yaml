@@ -1,7 +1,13 @@
 services:
-  polling-test:
+  livescore-polling-test:
     build:
       context: .
       args:
-        - _POLL_URL=https://raflie.cc/
+        - _POLL_URL=https://prod-public-api.livescore.com/v1/api/app/date/soccer/20220808/8?MD=1
+  transfermarkt-polling-test:
+    build:
+      context: .
+      args:
+        - _POLL_URL=https://www.transfermarkt.com/weltmeisterschaft-2018/gesamtspielplan/pokalwettbewerb/WM18/saison_id/2017
+
     
